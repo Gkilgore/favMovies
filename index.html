@@ -1,59 +1,49 @@
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Kilgore's Movies</title>
-  </head>
-
-
-  <body>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Kilgore's Movies</title>
+</head>
+<body>
+  <div id="app">
     <div class="row text-center">
-        <div class="col-sm">
-          <div class="jumbotron">
-            <h1 class="display-4">My Favorite Movies</h1>
-            <p class="lead"></p>
-            <hr class="my-4">
+      <div class="col">
+        <div class="jumbotron">
+          <h1 class="display-4">{{title}}</h1>
+          <p class="lead">{{subTitle}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4" v-for="movie in listOfMovies">
+        <div class="card text-center">
+          <img :src="movie.src"  class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{movie.title}}</h5>
+            <p class="card-text">{{movie.description}}</p>
+            <a :href="movie.href" class="btn btn-primary">IMDB</a>
           </div>
         </div>
       </div>
 
-    <div class="row">
-                          <div class="col-sm-4">
-                            <div class="card text-center" style="width: 18rem;">
-                              <img src="img/Empire.jpg" class="card-img-top" alt="...">
-                              <div class="card-body">
-                                <h5 class="card-title">Star Wars: Empire Straikes Back</h5>
-                                <p class="card-text">After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader and a bounty hunter named Boba Fett all over the galaxy.</p>
-                                <a href="https://www.imdb.com/title/tt0080684/" class="btn btn-primary">IMDB</a>
-                              </div>
-                              </div>
-                            </div>
-                          <div class="col-sm-4">
-                              <div class="card text-center" style="width: 18rem;">
-                                <img src="img/woodworking.jfif" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Wood Working</h5>
-                                  <p class="card-text">This link will take you to my Woodworking projects</p>
-                                  <a href="Woodworking.html" class="btn btn-primary">Wood Working</a>
-                                </div>
-                              </div>
-                          </div>
-                              <div class="col-sm-4">
-                                <div class="card text-center" style="width: 18rem;">
-                                  <img src="img/scorboard.png" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <h5 class="card-title">Scoreboards</h5>
-                                    <p class="card-text">I have a second job where I install Scoreboards, check it out here!</p>
-                                    <a href="Scoreboards.html" class="btn btn-primary ">Scoreboards</a>
-                                  </div>
-                                </div>
-                              </div>
-                    </div>
+
+    </div>
+
+  </div>
 
 
-  </body>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="script/app.js"></script>
+</body>
+</html>
